@@ -7,13 +7,13 @@ module.exports = {
       host: 'localhost',
       user: 'newbology',
       password: 'password',
-      database: 'express_gallery'
+      database: 'react_kanban'
     },
     migrations: {
-      directory: __dirname + '/knex/migrations',
+      directory: __dirname + '/database/migrations',
     },
     seeds: {
-      directory: __dirname + '/knex/seeds'
+      directory: __dirname + '/database/seeds'
     }
   },
 
@@ -39,13 +39,13 @@ module.exports = {
       host: 'postgres-primary-db',
       user: 'newbology',
       password: 'password',
-      database: 'express_gallery'
+      database: 'react_kanban'
     },
     migrations: {
-      directory: __dirname + '/knex/migrations',
+      directory: __dirname + '/database/migrations',
     },
     seeds: {
-      directory: __dirname + '/knex/seeds'
+      directory: __dirname + '/database/seeds'
     }
   }
 };
