@@ -1,7 +1,7 @@
 exports.up = function(knex, Promise) {
   return knex.schema.createTable('statuses', (table) => {
     table.increments('status_id').primary();
-    table.string('name').notNullable();
+    table.string('status').notNullable();
     table.integer('rank').notNullable();
     table.timestamps(true, true);
   });
