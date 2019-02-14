@@ -1,14 +1,14 @@
 import React from 'react';
 
 const Task = props => {
-  const {title, body, createdBy, assignedTo, rank} = props
-  return( 
+  const {title} = props
+  return(
     <div>
       <div>{title}</div>
-      <div>{body}</div>
-      <div>{createdBy}</div>
-      <div>{assignedTo}</div>
-      <div>{rank}</div>
+      <div>xasldkas</div>
+      <div>kasodjkasdasds</div>
+      <div>zasdasdasds</div>
+      <div>iasdasdas sa</div>
     </div>
   );
 };
