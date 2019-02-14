@@ -19,8 +19,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <TaskListTitle title={this.state.pageTitle}/>
-      <KanbanBoard  board={this.state.kanbanBoard}/>
+       <TaskListTitle title={this.state.pageTitle}/>
+       <KanbanBoard  board={this.state.kanbanBoard}/>
       </div>
     );
   }
