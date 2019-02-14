@@ -1,51 +1,24 @@
 // Update with your config settings.
 
 module.exports = {
-  development: {
     client: 'pg',
     connection: {
-      host: 'localhost',
-      user: 'newbology',
-      password: 'password',
-      database: 'express_gallery'
-    },
-    migrations: {
-      directory: __dirname + '/knex/migrations',
-    },
-    seeds: {
-      directory: __dirname + '/knex/seeds'
-    }
-  },
-
-  staging: {
-    client: 'postgresql',
-    connection: {
-      database: 'my_db',
-      user: 'username',
-      password: 'password'
+      host: process.env.PG_HOST,
+      user: process.env.PG_USER,
+      password: process.env.PG_PASSWORD,
+      database: process.env.PG_DATABASE
     },
     pool: {
       min: 2,
       max: 10
     },
     migrations: {
+      directory: __dirname + '/database/migrations',
       tableName: 'knex_migrations'
-    }
-  },
-
-  production: {
-    client: 'pg',
-    connection: {
-      host: 'postgres-primary-db',
-      user: 'newbology',
-      password: 'password',
-      database: 'express_gallery'
-    },
-    migrations: {
-      directory: __dirname + '/knex/migrations',
     },
     seeds: {
-      directory: __dirname + '/knex/seeds'
+      directory: __dirname + '/database/seeds'
     }
-  }
-};
+  };
+
+
