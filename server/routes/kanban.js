@@ -1,18 +1,13 @@
 const express = require('express');
 const router = express.Router();
 const Card = require('../../database/models/Card');
+const { isAuthenticated } = require('../auth/index')
 
-function isAuthenticated (req, res, next) {
-  if(req.isAuthenticated()) { next();}
-  else { res.redirect('/'); }
-};
 
 router.get('/', (req,res) => {
-  console.log('asjndlasjnsa')
   Card
   .fetchAll()
   .then((cards)=>{
-    console.log(cards);
     res.json(cards);
   })
 });
@@ -28,8 +23,8 @@ router.post('/',isAuthenticated, (req,res) => {
     assignedTo_id: req.user.id
   })
   .save(null, { method: 'insert' })
-  .then(() => {
-    res.redirect('/');
+  .then((card) => {
+    res.json(card);
   });
 });
 
@@ -39,7 +34,9 @@ router.put('/', (req,res) => {
   .forge(body)
   .where('id', id)
   .save(null, {method: 'update'})
-  res.redirect('/')
+  .then((card) => {
+    res.json(card)
+  })
 });
 
 router.delete('/', (req,res) =>{
@@ -47,8 +44,8 @@ router.delete('/', (req,res) =>{
   Card
   .where('id', id)
   .destroy()
-  .then(() => {
-    res.redirect('/')
+  .then((card) => {
+    res.json(card)
   })
 });
 
