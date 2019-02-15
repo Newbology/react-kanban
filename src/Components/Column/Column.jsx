@@ -1,11 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import TaskList from '../TaskList'
 
-const Column = (props) => {
+class Column extends Component {
+constructor(props) {
+  super(props);
+}
+  render() {
 
   return (
-    <TaskList />
+    <div>
+      <TaskList type="in-queue"/>
+      <TaskList type="in-progress"/>
+      <TaskList type="complete"/>
+    </div>
   )
+  
+ }
 }
 
 export default Column;

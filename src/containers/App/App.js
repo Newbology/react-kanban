@@ -27,7 +27,9 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {};
+  return {
+    tasks: state
+  };
 };
 
 const mapDispatchToProps = (dispatch) => {
