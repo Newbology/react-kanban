@@ -10,6 +10,12 @@ export function addTask(newTask){
   }
 };
 
+export function addAsyncTask(newTask){
+  return dispatch => {
+    
+  }
+}
+
 export function deleteTask(Task){
   return{
     type: DELETE_TASK,
