@@ -31,7 +31,7 @@ app.use(passport.session());
 
 
 
-app.use('/api', kanban)
+app.use('/kanban', kanban)
 
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`)

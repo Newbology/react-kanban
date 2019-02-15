@@ -5,12 +5,14 @@ const { isAuthenticated } = require('../auth/index')
 
 
 router.get('/', (req,res) => {
-  Task
+  return Task
   .fetchAll()
   .then((tasks)=>{
     res.json(tasks);
+  }).catch(err => {
+    res.json(err)
   })
-});
+}); 
 
 router.post('/',isAuthenticated, (req,res) => {
   Task
