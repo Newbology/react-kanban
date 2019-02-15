@@ -11,7 +11,7 @@ router.get('/', (req,res) => {
     res.json(tasks);
   }).catch(err => {
     res.json(err)
-  })
+  });
 }); 
 
 router.post('/',isAuthenticated, (req,res) => {
@@ -38,7 +38,7 @@ router.put('/', (req,res) => {
   .save(null, {method: 'update'})
   .then((task) => {
     res.json(task)
-  })
+  });
 });
 
 router.delete('/', (req,res) =>{
@@ -48,7 +48,7 @@ router.delete('/', (req,res) =>{
   .destroy()
   .then((task) => {
     res.json(task)
-  })
+  });
 });
 
 module.exports = router;
