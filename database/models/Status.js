@@ -5,7 +5,7 @@ class Status extends bookshelf.Model{
   get hasTimestamps() {return true;}
 
   status(){
-   return this.belongsTo('Card');
+   return this.belongsTo('Task');
   };
 };
 

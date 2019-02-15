@@ -1,7 +1,7 @@
 const bookshelf = require('./bookshelf');
 
-class Card extends bookshelf.Model{
-  get tableName() {return 'cards';}
+class Task extends bookshelf.Model{
+  get tableName() {return 'tasks';}
   get hasTimestamps() {return true;}
 
   status(){
@@ -18,4 +18,4 @@ class Card extends bookshelf.Model{
   }
 };
 
-  module.exports = bookshelf.model('Card', Card);
+  module.exports = bookshelf.model('Task', Task);

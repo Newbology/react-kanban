@@ -5,7 +5,7 @@ class Priority extends bookshelf.Module{
   get hasTimestamps() {return true;}
 
   priority(){
-   return this.belondsTo('Card');
+   return this.belondsTo('Task');
   };
 };
 

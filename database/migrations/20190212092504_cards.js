@@ -1,7 +1,7 @@
 
 exports.up = function(knex, Promise) {
- return knex.schema.createTable('cards', (table) => { 
-  table.increments('card_id').primary();
+ return knex.schema.createTable('tasks', (table) => { 
+  table.increments('task_id').primary();
   table.string('title', 255).notNullable();
   table.string('body', 1024).notNullable();
   table.timestamps(true, true)
@@ -9,5 +9,5 @@ exports.up = function(knex, Promise) {
 };
 
 exports.down = function(knex, Promise) {
-  return knex.schema.dropTable('cards');
+  return knex.schema.dropTable('tasks');
 };

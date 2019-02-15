@@ -5,11 +5,11 @@ class User extends bookshelf.Model{
   get hasTimestamps() {return true;}
 
   assignedTo(){
-   return this.belongsTo('Card');
+   return this.belongsTo('Task');
   };
 
   createdBy(){
-   return this.belongsTo('Card');
+   return this.belongsTo('Task');
   };
 };
 
