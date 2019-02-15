@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../../database/models/Task');
-const { isAuthenticated } = require('../auth/index')
+const { isAuthenticated } = require('../auth/index');
 
 
 router.get('/', (req,res) => {
@@ -31,7 +31,7 @@ router.post('/',isAuthenticated, (req,res) => {
 });
 
 router.put('/', (req,res) => {
-  let id = req.params.id
+  let id = req.params.id;
   Task
   .forge(body)
   .where('id', id)
