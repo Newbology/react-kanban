@@ -3,14 +3,15 @@ import { connect } from 'react-redux';
 import TaskListTitle from '../../Components/TaskListTitle';
 import KanbanBoard from '../../Containers/KanbanBoard';
 import './App.css';
-var fetchUrl = require("fetch").fetchUrl;
+import { loadTasks } from '../../actions';
 
 class App extends Component {
   constructor(props){
     super(props)
-
     this.state = {
-      pageTitle: `Kanban Board`
+      pageTitle: `Kanban Board`,
+
+
     };
   };
 
