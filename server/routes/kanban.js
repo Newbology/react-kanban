@@ -1,19 +1,19 @@
 const express = require('express');
 const router = express.Router();
-const Card = require('../../database/models/Card');
+const Task = require('../../database/models/Task');
 const { isAuthenticated } = require('../auth/index')
 
 
 router.get('/', (req,res) => {
-  Card
+  Task
   .fetchAll()
-  .then((cards)=>{
-    res.json(cards);
+  .then((tasks)=>{
+    res.json(tasks);
   })
 });
 
 router.post('/',isAuthenticated, (req,res) => {
-  Card
+  Task
   .forge({
     title: req.body.title,
     body: req.body.body,
@@ -23,29 +23,29 @@ router.post('/',isAuthenticated, (req,res) => {
     assignedTo_id: req.user.id
   })
   .save(null, { method: 'insert' })
-  .then((card) => {
-    res.json(card);
+  .then((task) => {
+    res.json(task);
   });
 });
 
 router.put('/', (req,res) => {
   let id = req.params.id
-  Card
+  Task
   .forge(body)
   .where('id', id)
   .save(null, {method: 'update'})
-  .then((card) => {
-    res.json(card)
+  .then((task) => {
+    res.json(task)
   })
 });
 
 router.delete('/', (req,res) =>{
   let id = req.params.id;
-  Card
+  Task
   .where('id', id)
   .destroy()
-  .then((card) => {
-    res.json(card)
+  .then((task) => {
+    res.json(task)
   })
 });
 
