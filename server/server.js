@@ -3,7 +3,6 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const redis = require('connect-redis')(session);
-const flash = require('connect-flash');
 const kanban = require('./routes/kanban')
 
 const PORT = process.env.EXPRESS_CONTAINER_PORT;
@@ -16,7 +15,6 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
-app.use(flash());
 
 app.use(session({
   store: new redis({ url: `${REDIS_URL}:${REDIS}`, logErrors:true}),
