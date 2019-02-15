@@ -24,5 +24,16 @@ export function deleteTask(Task){
 };
 
 export const loadTasks = () => {
-  
+  return (dispatch) => {
+    return fetch('/')
+     .then((response) => {
+      return response.json();
+    }) 
+    .then((tasks) => {
+     return dispatch({
+       type: LOAD_TASK,
+       payload: tasks
+      });
+    });
+  }
 }

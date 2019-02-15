@@ -3,15 +3,20 @@ import { connect } from 'react-redux';
 import TaskListTitle from '../../Components/TaskListTitle';
 import KanbanBoard from '../../Containers/KanbanBoard';
 import './App.css';
-
+var fetchUrl = require("fetch").fetchUrl;
 
 class App extends Component {
   constructor(props){
     super(props)
+
     this.state = {
       pageTitle: `Kanban Board`
-    }
-  }
+    };
+  };
+
+  componentDidMount() {
+    return this.props.loadTasks();
+  };
 
 
   render() {
@@ -21,24 +26,27 @@ class App extends Component {
        <KanbanBoard  board={this.state.kanbanBoard}/>
       </div>
     );
-  }
-}
+  };
+};
 
 const mapStateToProps = (state) => {
-  console.log('mapStateToProps:',state);
   return {
     tasks: state
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {};
+  return {
+    loadTasks : () => {
+      return dispatch(loadTasks())
+    }
+  };
 };
 
 App = connect(
   mapStateToProps,
   mapDispatchToProps
-)(App)
+)(App);
 
 
 export default App;
