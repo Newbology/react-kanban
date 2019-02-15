@@ -1,6 +1,6 @@
 import React, { Component }from 'react';
 import { connect } from 'react-redux';
-import Task from '../Task';
+// import Task from '../Task';
 
 
 class TaskList extends Component {
@@ -9,16 +9,17 @@ class TaskList extends Component {
     super(props);
   }
   render(){
+      
   return(
   
     <div className="Task">
     
-      <Task 
+      {/* <Task 
       title={task.title}
       body={task.body}
       priority={task.priority}
       assignedBy={task.assignedBy}
-      assignedTo={task.assignedTo}/>
+      assignedTo={task.assignedTo}/> */}
     </div>
     )
   }
