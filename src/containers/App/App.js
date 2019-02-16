@@ -9,7 +9,7 @@ class App extends Component {
   constructor(props){
     super(props)
     this.state = {
-      pageTitle: `Kanban Board`,
+      pageTitle: "Kanban Board"
     };
   };
 
@@ -17,12 +17,11 @@ class App extends Component {
     return this.props.loadTasks();
   };
 
-
   render() {
     return (
       <div className="App">
        <TaskListTitle title={this.state.pageTitle}/>
-       <KanbanBoard  board={this.state.kanbanBoard}/>
+       <KanbanBoard  kanbanBoard={this.state.kanbanBoard}/>
       </div>
     );
   };
@@ -46,6 +45,5 @@ App = connect(
   mapStateToProps,
   mapDispatchToProps
 )(App);
-
 
 export default App;
