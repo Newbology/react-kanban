@@ -7,7 +7,7 @@ class TaskList extends Component {
   constructor(props){
  
     super(props);
-  }
+  };
   render(){
       
   return(
@@ -31,7 +31,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return{}
-}
+};
 
 TaskList = connect(
   mapStateToProps,
