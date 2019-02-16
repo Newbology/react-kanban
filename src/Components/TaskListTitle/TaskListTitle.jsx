@@ -8,7 +8,7 @@ const TaskListTitle = (props) => {
    <div className="header">
    {title}
    </div>
- )
-}
+ );
+};
 
 export default TaskListTitle;

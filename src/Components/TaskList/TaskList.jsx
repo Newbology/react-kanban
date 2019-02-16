@@ -1,42 +1,31 @@
-import React, { Component }from 'react';
-import { connect } from 'react-redux';
-// import Task from '../Task';
+import React from 'react';
+import Task from '../Task';
 
 
-class TaskList extends Component {
-  constructor(props){
- 
-    super(props);
-  };
-  render(){
-      
-  return(
-  
-    <div className="Task">
-    
-      {/* <Task 
+const TaskList = (props) => {
+  const list = props.tasks.map((task) => {
+
+    return(
+      <Task 
+      key={task.task_id}
+      id={task.task_id}
       title={task.title}
       body={task.body}
-      priority={task.priority}
-      assignedBy={task.assignedBy}
-      assignedTo={task.assignedTo}/> */}
-    </div>
-    )
-  }
-}
-
-const mapStateToProps = (state) => {
-  return{}
+      priority={task.priority_id}
+      status={task.status_id}
+      assignedTo={task.assignedTo_id}
+      createdby={task.createdby_id}
+      />
+    );
+  });
+  return(
+  <>
+  {list}
+  </>
+  );
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return{}
-};
 
-TaskList = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TaskList)
 
 
 
