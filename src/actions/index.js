@@ -7,25 +7,25 @@ export function addTask(newTask){
   return{
     type: ADD_TASK,
     payload: newTask
-  }
+  };
 };
 
 export function addAsyncTask(newTask){
   return dispatch => {
     
-  }
-}
+  };
+};
 
 export function deleteTask(Task){
   return{
     type: DELETE_TASK,
     payload: Task
-  }
+  };
 };
 
 export const loadTasks = () => {
   return (dispatch) => {
-    return fetch('/')
+    return fetch('/kanban')
      .then((response) => {
       return response.json();
     }) 
@@ -35,5 +35,5 @@ export const loadTasks = () => {
        payload: tasks
       });
     });
-  }
-}
+  };
+};

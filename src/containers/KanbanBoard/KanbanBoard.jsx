@@ -10,8 +10,8 @@ class KanbanBoard extends Component {
 
     this.state = {
       input: ''
-    }
-  }
+    };
+  };
 
   render() {
     return(
@@ -20,8 +20,7 @@ class KanbanBoard extends Component {
       <TaskList tasks={this.state.props}/>
     </div>
     )
-  }
-
+  };
 };
 
 

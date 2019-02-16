@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import TaskList from '../TaskList'
+import TaskList from '../TaskList';
 import { connect } from 'react-redux';
 
 class Column extends Component {
 constructor(props) {
   super(props);
-}
+};
 render() {
 
   return (
@@ -14,23 +14,22 @@ render() {
       <TaskList type="in-progress"/>
       <TaskList type="complete"/>
     </div>
-  )
-  
- }
-}
+  );
+ };
+};
 
 
 const mapStateToProps = (state) => {
-  return{}
+  return{};
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return{}
-}
+  return{};
+};
 
 Column = connect(
   mapStateToProps,
   mapDispatchToProps
-)(Column)
+)(Column);
 
 export default Column;
