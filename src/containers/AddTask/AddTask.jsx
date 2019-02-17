@@ -7,13 +7,13 @@ class AddTask extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: 1,
+      id: 2,
       title: '',
       body: '',
       status_id: 1,
       priority_id: 1,
       assignedTo_id: 1,
-      createdby_id: 1
+      createdBy_id: 1
     };
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,8 +34,8 @@ class AddTask extends Component {
       case 'assignedTo_id':
         this.setState({ assignedTo: value });
         break;
-      case 'createdby_id':
-        this.setState({ createdby: value });
+      case 'createdBy_id':
+        this.setState({ createdBy: value });
         break;
       default:
         break;
@@ -50,7 +50,7 @@ class AddTask extends Component {
       status_id,
       priority_id,
       assignedTo_id,
-      createdby_id
+      createdBy_id
     } = this.state;
 
     this.props.addTask({
@@ -59,7 +59,7 @@ class AddTask extends Component {
       status_id,
       priority_id,
       assignedTo_id,
-      createdby_id
+      createdBy_id
     });
   }
 
@@ -111,9 +111,9 @@ class AddTask extends Component {
             onChange={this.handleInputChange}
           />
           <input
-            id="createdby"
+            id="createdBy"
             type="text"
-            value={this.state.createdby_id}
+            value={this.state.createdBy_id}
             onChange={this.handleInputChange}
           />
 

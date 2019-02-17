@@ -20,7 +20,7 @@ router.post('/', (req,res) => {
     body: req.body.body,
     status_id: req.body.status_id,
     priority_id: req.body.priority_id,
-    createdby_id: req.body.createdby_id,
+    createdBy_id: req.body.createdBy_id,
     assignedTo_id: req.body.assignedTo_id
   })
   .save(null, { method: 'insert' })

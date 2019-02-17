@@ -11,7 +11,7 @@ exports.seed = function(knex, Promise) {
          body:'practice git',
          priority_id:1,
          status_id:3,
-         createdby_id:1,
+         createdBy_id:1,
          assignedTo_id:1
         },
         {
@@ -20,7 +20,7 @@ exports.seed = function(knex, Promise) {
          body:'raise prayer to 99',
          priority_id:2,
          status_id:1,
-         createdby_id:1,
+         createdBy_id:1,
          assignedTo_id:3
         },
         {
@@ -29,7 +29,7 @@ exports.seed = function(knex, Promise) {
          body:'Raise prayer to 99',
          priority_id:1,
          status_id:2,
-         createdby_id:1,
+         createdBy_id:1,
          assignedTo_id:2
         },
         {
@@ -38,7 +38,7 @@ exports.seed = function(knex, Promise) {
          body:'Raise Runecrafting to 99',
          priority_id:1,
          status_id:1,
-         createdby_id: 1,
+         createdBy_id: 1,
          assignedTo_id:2
         },
       ]);

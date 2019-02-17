@@ -13,7 +13,7 @@ const TaskList = props => {
         priority={task.priority_id}
         status={task.status_id}
         assignedTo={task.assignedTo_id}
-        createdby={task.createdby_id}
+        createdBy={task.createdBy_id}
       />
     );
   });

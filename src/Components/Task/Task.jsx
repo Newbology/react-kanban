@@ -10,6 +10,8 @@ const Task = props => {
       <div>{priority}</div>
       <div>{createdBy}</div>
       <div>{assignedTo}</div>
+      <button>Edit</button>
+      <button>Delete</button>
     </div>
   );
 };
