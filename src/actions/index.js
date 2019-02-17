@@ -3,8 +3,8 @@ export const DELETE_TASK = 'DELETE_TASK';
 export const EDIT_TASK = 'EDIT_TASK';
 export const LOAD_TASK = 'LOAD_TASK';
 
-export function addTask(newTask){
-  return (dispatch) => {
+export function addTask(newTask) {
+  return dispatch => {
     return fetch('/kanban', {
       method: 'POST',
       body: JSON.stringify(newTask),
@@ -12,18 +12,17 @@ export function addTask(newTask){
         'Content-Type': 'application/json'
       }
     })
-    .then((response) => {
-      return response.json();
-    })
-    .then((newTask) => {
-      return dispatch({
-        type: ADD_TASK,
-        payload: newTask
+      .then(response => {
+        return response.json();
+      })
+      .then(newTask => {
+        return dispatch({
+          type: ADD_TASK,
+          payload: newTask
+        });
       });
-    });
   };
 }
-
 
 export const loadTasks = () => {
   return dispatch => {
