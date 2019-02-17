@@ -1,9 +1,9 @@
 import React from 'react';
 
 const Task = props => {
-  const {title, body, priority, assignedBy, assignedTo} = props;
-  return(
-    <div>
+  const { title, body, priority, assignedBy, assignedTo } = props;
+  return (
+    <div className="task">
       <div>{title}</div>
       <div>{body}</div>
       <div>{priority}</div>

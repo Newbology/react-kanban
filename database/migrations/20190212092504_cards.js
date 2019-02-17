@@ -5,7 +5,7 @@ exports.up = function(knex, Promise) {
   table.string('title', 255).notNullable();
   table.string('body', 1024).notNullable();
   table.timestamps(true, true)
- }) 
+ }); 
 };
 
 exports.down = function(knex, Promise) {

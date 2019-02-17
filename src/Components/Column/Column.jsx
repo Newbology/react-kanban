@@ -1,36 +1,15 @@
-import React, { Component } from 'react';
-import TaskList from '../TaskList'
-import { connect } from 'react-redux';
+import React from 'react';
+import TaskList from '../TaskList';
 
-class Column extends Component {
-constructor(props) {
-  super(props);
-}
-render() {
+const Column = props => {
+  const { title, column } = props;
 
   return (
-    <div>
-      <TaskList type="in-queue"/>
-      <TaskList type="in-progress"/>
-      <TaskList type="complete"/>
+    <div className={title}>
+      <div>{title}</div>
+      <TaskList type="complete" tasks={column} />
     </div>
-  )
-  
- }
-}
-
-
-const mapStateToProps = (state) => {
-  return{}
+  );
 };
-
-const mapDispatchToProps = (dispatch) => {
-  return{}
-}
-
-Column = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Column)
 
 export default Column;

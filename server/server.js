@@ -3,7 +3,7 @@ const session = require('express-session');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const redis = require('connect-redis')(session);
-const kanban = require('./routes/kanban')
+const kanban = require('./routes/kanban');
 
 const PORT = process.env.EXPRESS_CONTAINER_PORT;
 const ENV = process.env.NODE_ENV || 'development';
@@ -26,11 +26,11 @@ app.use(session({
 
 app.use(passport.initialize());
 app.use(passport.session());
+app.use('/kanban', kanban);
 
 
 
-app.use('/kanban', kanban)
 
 app.listen(PORT, () => {
   console.log(`Server running on port: ${PORT}`)
-})
+});
