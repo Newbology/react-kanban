@@ -1,32 +1,22 @@
 import React from 'react';
 import Task from '../Task';
 
-
-const TaskList = (props) => {
-  const list = props.tasks.map((task) => {
-
-    return(
-      <Task 
-      key={task.task_id}
-      id={task.task_id}
-      title={task.title}
-      body={task.body}
-      priority={task.priority_id}
-      status={task.status_id}
-      assignedTo={task.assignedTo_id}
-      createdby={task.createdby_id}
+const TaskList = props => {
+  const list = props.tasks.map(task => {
+    return (
+      <Task
+        key={task.task_id}
+        id={task.task_id}
+        title={task.title}
+        body={task.body}
+        priority={task.priority_id}
+        status={task.status_id}
+        assignedTo={task.assignedTo_id}
+        createdby={task.createdby_id}
       />
     );
   });
-  return(
-  <>
-  {list}
-  </>
-  );
+  return <>{list}</>;
 };
-
-
-
-
 
 export default TaskList;
