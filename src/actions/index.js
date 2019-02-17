@@ -3,21 +3,31 @@ export const DELETE_TASK = 'DELETE_TASK';
 export const EDIT_TASK = 'EDIT_TASK';
 export const LOAD_TASK = 'LOAD_TASK';
 
+export const deleteTask = (taskId) => {
+  return {
+    type:DELETE_TASK,
+    payload: taskId
+  }
+}
+
 export function addTask(newTask) {
-  return {
-    type: ADD_TASK,
-    payload: newTask
-  };
-}
-
-export function addAsyncTask(newTask) {
-  return dispatch => {};
-}
-
-export function deleteTask(Task) {
-  return {
-    type: DELETE_TASK,
-    payload: Task
+  return dispatch => {
+    return fetch('/kanban', {
+      method: 'POST',
+      body: JSON.stringify(newTask),
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
+      .then(response => {
+        return response.json();
+      })
+      .then(newTask => {
+        return dispatch({
+          type: ADD_TASK,
+          payload: newTask
+        });
+      });
   };
 }
 

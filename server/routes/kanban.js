@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
 const Task = require('../../database/models/Task');
-const { isAuthenticated } = require('../auth/index');
 
 
 router.get('/', (req,res) => {
@@ -14,15 +13,15 @@ router.get('/', (req,res) => {
   });
 }); 
 
-router.post('/',isAuthenticated, (req,res) => {
-  Task
+router.post('/', (req,res) => {
+  Task 
   .forge({
     title: req.body.title,
     body: req.body.body,
-    status_id: req.status.id,
-    priority_id: req.priority.id,
-    createdBy_id: req.user.id,
-    assignedTo_id: req.user.id
+    status_id: req.body.status_id,
+    priority_id: req.body.priority_id,
+    createdBy_id: req.body.createdBy_id,
+    assignedTo_id: req.body.assignedTo_id
   })
   .save(null, { method: 'insert' })
   .then((task) => {
