@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import Column from '../../Components/Column';
 import { connect } from 'react-redux';
-import './KanbanBoard.scss'
-
+import './KanbanBoard.scss';
 
 class KanbanBoard extends Component {
   render() {
