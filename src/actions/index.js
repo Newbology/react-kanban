@@ -22,21 +22,20 @@ export function addTask(newTask){
       });
     });
   };
-};
-
+}
 
 
 export const loadTasks = () => {
-  return (dispatch) => {
+  return dispatch => {
     return fetch('/kanban')
-     .then((response) => {
-      return response.json();
-    }) 
-    .then((tasks) => {
-     return dispatch({
-       type: LOAD_TASK,
-       payload: tasks
+      .then(response => {
+        return response.json();
+      })
+      .then(tasks => {
+        return dispatch({
+          type: LOAD_TASK,
+          payload: tasks
+        });
       });
-    });
   };
 };

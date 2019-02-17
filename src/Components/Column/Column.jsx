@@ -2,8 +2,8 @@ import React from 'react';
 import TaskList from '../TaskList';
 import './Column.scss'
 
-const Column = (props) =>  {
-const { title, column } = props;
+const Column = props => {
+  const { title, column } = props;
 
   return (
   <div className="wrapper">
@@ -14,8 +14,5 @@ const { title, column } = props;
   </div>
   );
 };
-
-
-
 
 export default Column;
